@@ -1,0 +1,13 @@
+version: "3"
+services:
+  gatsby:
+    build: .
+    volumes:
+      - gatsby-sync:/usr/src/app:nocopy
+    working_dir: /usr/src/app/
+    command: gatsby develop -H 0.0.0.0
+    ports:
+      - "0.0.0.0:8000:8000"
+volumes:
+  gatsby-sync:
+    external: true
